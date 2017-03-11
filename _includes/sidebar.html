@@ -1,0 +1,26 @@
+<div class="ui fluid action input">
+<form role="search" method="get" action="{{site.baseurl}}/search/">
+  <input name="q" type="text" placeholder="Search...">
+  <button type="submit" class="ui icon button">
+    <i class="fa fa-search"></i>
+  </button>
+</form>
+</div>
+
+		<div class="ui segment">
+			<h3 class="ui header"><i class="fa fa-user"></i> About Me</h3>
+			<p>I am a regular programmer who has hobby surfing in Virtual Words.<br/><a href="/about" title="See More About Me">See More ...</a></p>
+		</div>
+
+		<div class="ui segment">
+			<h3 class="ui header"><i class="fa fa-tags"></i> Tags</h3>
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+<a href="/tag/{{ tag | first | slugify }}/" class="ui label"><i class="fa fa-tag"></i> {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})</a>
+{% endfor %}
+		</div>
+
+		<div class="my-octocard">
+		<script data-name="bandexDarkIT" data-modules="base,details,stats,repos,eventsStatis,orgs" data-reposNum="3" src="http://octocard.in/o.js" />
+		</script>
+		</div>

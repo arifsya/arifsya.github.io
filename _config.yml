@@ -1,0 +1,25 @@
+title:		"[--DarkIT--]"
+email:		"mr.arifsya@gmail.com"
+description:	"Because only in the Darkness we can appreciate the name Glimmer of Light"
+baseurl:	""
+url:		"https://arifsya.github.io"
+
+github_username:	arifsya
+markdown:		kramdown
+paginate:		4
+paginate_path:		"/allpost/page/:num"
+excerpt_separator:	"<!--excerpt-->"
+
+gems: [jekyll-paginate, jekyll-feed, jekyll-sitemap]
+
+authors:
+  bandex:
+    name:		arifsya
+    display_name:	arifsya
+    email:		mr.arifsya@gmail.com
+    web:		https://arifsya.github.io
+    github:		arifsya
+
+
+
+

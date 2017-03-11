@@ -1,0 +1,70 @@
+---
+layout:	posting
+author:	bandex
+---
+
+{% assign author = site.authors[page.author] %}
+<div class="ui centered grid" style="margin-bottom:15px;margin-top:10px;">
+	<div class="three wide column">
+		<div id="tabber" class="ui vertical fluid tabular menu">
+			<a class="active item" data-tab="post"><i class="fa fa-file-text"></i> Post</a>
+			<a class="item" data-tab="comments"><i class="fa fa-comments"></i> Comments</a>
+			<a class="item" data-tab="about"><i class="fa fa-user-secret"></i> About</a>
+		</div>
+	</div>
+	<div class="nine wide stretched column">
+		<div class="ui bottom attached active tab" data-tab="post">
+			<div class="ui piled segment">
+				<h2 class="ui header">{{ page.title }}</h2>
+				<p class="post-meta">
+				<div class="ui label"><i class="fa fa-calendar"></i> {{ page.date | date: "%-d %b %Y" }}</div> <div class="ui label"><i class="fa fa-clock-o"></i> {{ page.date | date: "%H:%M" }}</div> 
+				{% for tags in page.tags %}
+				<a href="/tag/{{ tags | slugify }}/" class="ui label"><i class="fa fa-tag"></i> {{ tags }}</a> 
+				{% endfor %} 
+				<a href="https://github.com/{{ author.github }}" class="ui label"><i class="fa fa-user"></i> {{ author.display_name }}</a>
+				</p>
+				<hr/>
+				{{ content }}
+			</div>
+		</div>
+		<div class="ui bottom attached tab" data-tab="comments">
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			var disqus_shortname = 'bandex';
+			(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		</div>
+		<div class="ui bottom attached tab" data-tab="about">
+			<div class="ui piled segment">
+				<div class="ui items">
+					<div class="item">
+						<a class="ui small image">
+							<img src="/img/profile.png" class="ui wireframe image">
+						</a>
+						<div class="content">
+							<a class="header">root@DarkIT:~#</a>
+							<div class="description">
+<br/>
+								<p>Hallo... My name is bandex from Indonesia. I'm just a regular programmer who has hobby surfing in Virtual Words.</p>
+<br/>
+							</div>
+							<button onclick="window.location='https://goo.gl/6zFaL0';" class="ui facebook button">
+							<i class="fa fa-facebook"></i>
+							Facebook
+							</button>
+							<button onclick="window.location='https://goo.gl/EGnGCE';" class="ui google plus button">
+							<i class="fa fa-google-plus"></i>
+							Google Plus
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

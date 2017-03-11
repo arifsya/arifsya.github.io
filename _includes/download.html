@@ -1,0 +1,29 @@
+<head>
+<style type="text/css">
+.captcha
+{ font: italic bold 20px "Comic Sans MS", cursive, sans-serif; 
+color:#a0a0a0;background-color:#c0c0c0;
+width:160px;border-radius: 3px;
+text-align:center;
+text-decoration:line-through;
+}
+.errmsg
+{color:#ff0000;}
+</style>
+<script src="/js/captha.js"></script>
+<script src="/js/safe.js"></script>
+</head>
+<body>
+<table><tr>
+<td id="captcha"><script> createCaptcha(); </script></td>
+<td>
+<input name="recaptcha" id="recaptcha" placeholder=" input captha here ..... "/>
+</td></tr>
+<tr>    
+<td id="errCaptcha" class="errmsg"></td>
+    <td colspan="2" style="text-align:right;">
+        <img src="/img/download.png" onClick="validateRecaptcha()"/>
+    </td>
+</tr>
+</table>
+</body>
